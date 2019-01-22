@@ -18,6 +18,7 @@
 .cmd
 .mvn/
 *.cmd
+.log
 
 ### NetBeans ###
 /nbproject/private/

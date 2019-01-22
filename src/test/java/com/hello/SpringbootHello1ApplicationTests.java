@@ -4,6 +4,8 @@ import com.hello.bean.Book;
 import com.hello.bean.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -16,6 +18,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringbootHello1ApplicationTests {
+    Logger logger = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private Person person;
     @Autowired
@@ -27,12 +31,13 @@ public class SpringbootHello1ApplicationTests {
     @Test
     public void existHelloService() {
         boolean containsBean = ioc.containsBean("helloService");
-        System.out.println("helloService是否存在:"+containsBean);
+        System.out.println("helloService是否存在:" + containsBean);
     }
+
     @Test
-    public  void existGirlService(){
+    public void existGirlService() {
         boolean containsBean = ioc.containsBean("girlService");
-        System.out.println("girlService是否存在:"+containsBean);
+        System.out.println("girlService是否存在:" + containsBean);
     }
 
     @Test
@@ -40,6 +45,7 @@ public class SpringbootHello1ApplicationTests {
         System.out.println(person);
         System.out.println(book);
     }
+
 
 
 }
